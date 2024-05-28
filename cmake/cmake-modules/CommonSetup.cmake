@@ -61,7 +61,7 @@ macro(CommonSetup)
                 find_package(LLVM REQUIRED CONFIG)
                 set(CXX_EXP_LIB "-L${LLVM_LIBRARY_DIRS} -lc++fs -ferror-limit=10")
             else()
-                set(CXX_EXP_LIB "-lstdc++fs -fmax-errors=10 -Wnoexcept -Wstrict-null-sentinel")
+                set(CXX_EXP_LIB "-L${LLVM_LIBRARY_DIRS} -ferror-limit=10")
             endif ()
         endif ()
 
