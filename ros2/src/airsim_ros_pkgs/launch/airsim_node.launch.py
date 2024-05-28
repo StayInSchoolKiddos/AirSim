@@ -8,9 +8,12 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from ament_index_python.packages import get_package_share_directory
 
+#get env variable AIRSIM_IP
+host_ip = os.environ.get('WSL_HOST_IP')
+print("host_ip: ", host_ip)
 
 def generate_launch_description():
-
+    
     output = DeclareLaunchArgument(
         "output",
         default_value='log')
@@ -23,10 +26,11 @@ def generate_launch_description():
         "is_vulkan",
         default_value='True')
 
+
     host = DeclareLaunchArgument(
         "host",
-        default_value='localhost')
-  
+        default_value=host_ip)
+    
     airsim_node = Node(
             package='airsim_ros_pkgs',
             executable='airsim_node',

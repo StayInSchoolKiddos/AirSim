@@ -33,7 +33,7 @@ add_subdirectory("${AIRSIM_ROOT}/cmake/MavLinkCom" MavLinkCom)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-O3 -Wall -Wextra -Wnoexcept -Wstrict-null-sentinel")
-set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -nodefaultlibs 
+set(CXX_EXP_LIB "-nostdinc++ -I/usr/include/c++/12 -I/usr/include/x86_64-linux-gnu/c++/12 -nodefaultlibs 
 -l/usr/lib/x86_64-linux-gnu/libc++.so -l/usr/lib/x86_64-linux-gnu/libc++abi.so
 -lm -lc -lgcc_s -lgcc
 -fmax-errors=10")
