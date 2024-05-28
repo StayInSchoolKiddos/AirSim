@@ -9,6 +9,8 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_sensor_msgs REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(tf2 REQUIRED)
+#print or echo the tf2 include directories
+message(STATUS "tf2 include dirs: ${tf2_INCLUDE_DIRS}")
 find_package(image_transport REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
@@ -59,6 +61,10 @@ ament_target_dependencies(pd_position_controller_simple
   nav_msgs
   geometry_msgs
   airsim_interfaces
+  tf2 
+  mavros_msgs
+  tf2_ros
+  tf2_geometry_msgs
 )
 
 add_library(airsim_ros src/airsim_ros_wrapper.cpp)
@@ -68,10 +74,14 @@ ament_target_dependencies(airsim_ros
   sensor_msgs
   geometry_msgs
   nav_msgs
+  std_srvs
   image_transport
+  mavros_msgs
   tf2_ros
   cv_bridge
   airsim_interfaces
+  tf2_geometry_msgs
+  tf2_sensor_msgs
 )
 
 add_executable(airsim_node src/airsim_node.cpp)

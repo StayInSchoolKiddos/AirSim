@@ -13,6 +13,7 @@ STRICT_MODE_OFF //todo what does this do?
 #include "vehicles/multirotor/api/MultirotorRpcLibClient.hpp"
 
 #include <rclcpp/rclcpp.hpp>
+//try to find a way to include the following headers
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
